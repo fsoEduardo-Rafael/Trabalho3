@@ -1,24 +1,23 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "primo.h"
 
-int gera_primo(){
-	int j, totalDivisores;
-	int nMax = 10000;
+int gera_primo(int n_max){
+	int j, total_divisores;
 	int primo = 0;
 	int numero;
 	
 	while(!primo){
-		numero = 2 + rand() % 100000;
-
-	    totalDivisores = 0;
+		numero = 2 + rand() % n_max;
+	    total_divisores = 0;
 	    // Contanto o total de divisores
 	    for(j = 1; j <= numero; j++) {
 	        if(numero % j == 0) {
-	            totalDivisores++;
+	            total_divisores++;
 	        }
 	    }
 	    // se existirem apenas 2 divisores, o número é primo:
-	    if(totalDivisores == 2) {
+	    if(total_divisores == 2) {
 	        primo = 1;
 	    }
 	}
